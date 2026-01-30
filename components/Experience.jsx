@@ -45,20 +45,20 @@ export default function Experience() {
             {timeline.map((item, i) => (
               <div key={item.role + item.company} className="relative pl-16 sm:pl-20">
                 {/* Dot */}
-                <div className="absolute left-4 sm:left-6 top-1 w-4 h-4 rounded-full bg-accent border-4 border-surface-800 ring-2 ring-accent/30" />
+                <div className="absolute left-4 sm:left-6 top-1 w-4 h-4 rounded-full bg-primary border-4 border-surface-800 ring-2 ring-primary/30" />
 
-                <div className="rounded-2xl bg-surface-800/50 border border-surface-600 p-6 sm:p-8 hover:border-accent/30 transition-colors duration-300">
+                <div className="rounded-2xl bg-surface-800/50 border border-surface-600 p-6 sm:p-8 hover:border-primary/30 transition-colors duration-300">
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2">
                     <h3 className="text-xl font-semibold text-white">{item.role}</h3>
                     <span className="text-accent font-medium">{item.company}</span>
                   </div>
                   <div className="flex flex-wrap gap-4 text-zinc-400 text-sm mb-4">
                     <span className="inline-flex items-center gap-1.5">
-                      <MapPin className="w-4 h-4 text-accent/80" />
+                      <MapPin className="w-4 h-4 text-primary/80" />
                       {item.location}
                     </span>
                     <span className="inline-flex items-center gap-1.5">
-                      <Calendar className="w-4 h-4 text-accent/80" />
+                      <Calendar className="w-4 h-4 text-primary/80" />
                       {item.period}
                     </span>
                   </div>

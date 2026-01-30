@@ -69,7 +69,7 @@ export default function Projects() {
           {projects.map((project, i) => (
             <article
               key={project.title}
-              className="group relative rounded-2xl bg-surface-800/50 border border-surface-600 overflow-hidden hover:border-accent/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent/5"
+              className="group relative rounded-2xl bg-surface-800/50 border border-surface-600 overflow-hidden hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5"
             >
               <div className="aspect-video relative overflow-hidden bg-surface-700">
                 <Image
@@ -83,14 +83,14 @@ export default function Projects() {
                 <div className="absolute bottom-4 left-4 right-4 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={project.link}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-800/90 text-zinc-200 hover:bg-accent hover:text-surface-900 text-sm font-medium"
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-800/90 text-zinc-200 hover:bg-secondary hover:text-surface-900 text-sm font-medium"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Live
                   </a>
                   <a
                     href={project.github}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-800/90 text-zinc-200 hover:bg-accent hover:text-surface-900 text-sm font-medium"
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-800/90 text-zinc-200 hover:bg-secondary hover:text-surface-900 text-sm font-medium"
                   >
                     <Github className="w-4 h-4" />
                     Code
@@ -98,7 +98,7 @@ export default function Projects() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-accent transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-zinc-400 text-sm mb-4">{project.description}</p>

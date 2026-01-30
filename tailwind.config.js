@@ -14,10 +14,23 @@ module.exports = {
           700: '#1a1a1d',
           600: '#242428',
         },
+        /* Sky Blue - primary backgrounds & accents */
+        primary: {
+          DEFAULT: '#0ea5e9',
+          light: '#38bdf8',
+          dark: '#0284c7',
+        },
+        /* Coral Blue - secondary elements & buttons */
+        secondary: {
+          DEFAULT: '#06b6d4',
+          light: '#22d3ee',
+          dark: '#0891b2',
+        },
+        /* Alias for primary (Sky Blue) for accents */
         accent: {
-          DEFAULT: '#a78bfa',
-          light: '#c4b5fd',
-          dark: '#7c3aed',
+          DEFAULT: '#0ea5e9',
+          light: '#38bdf8',
+          dark: '#0284c7',
         },
       },
       fontFamily: {

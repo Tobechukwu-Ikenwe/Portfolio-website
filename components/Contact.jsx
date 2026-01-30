@@ -40,7 +40,7 @@ export default function Contact() {
                 type="text"
                 required
                 placeholder="Your name"
-                className="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-700 border border-surface-600 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-colors"
+                className="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-700 border border-surface-600 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
               />
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function Contact() {
                 type="email"
                 required
                 placeholder="you@example.com"
-                className="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-700 border border-surface-600 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-colors"
+                className="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-700 border border-surface-600 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
               />
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function Contact() {
                 required
                 rows={5}
                 placeholder="Tell me about your project..."
-                className="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-700 border border-surface-600 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-colors resize-none"
+                className="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-700 border border-surface-600 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors resize-none"
               />
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status === 'sending'}
-            className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-accent hover:bg-accent-light text-surface-900 font-semibold transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-accent/25"
+            className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-secondary hover:bg-secondary-light text-surface-900 font-semibold transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-secondary/25"
           >
             {status === 'sending' && (
               <span className="w-5 h-5 border-2 border-surface-900 border-t-transparent rounded-full animate-spin" />

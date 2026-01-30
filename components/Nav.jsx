@@ -5,20 +5,20 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { href: '#hero', label: 'Home' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/experience', label: 'Experience' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-surface-700/50 bg-surface-900/80 backdrop-blur-xl">
+    <header className="sticky top-0 left-0 right-0 z-50 border-b border-surface-700/50 bg-surface-900/95 backdrop-blur-xl">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="#hero" className="text-xl font-bold text-white hover:text-accent transition-colors">
-          Portfolio
+        <Link href="/" className="text-xl font-bold text-white hover:text-primary transition-colors">
+          Tobechukwu Ikenwe
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">
@@ -34,8 +34,8 @@ export default function Nav() {
           ))}
           <li>
             <Link
-              href="#contact"
-              className="px-4 py-2 rounded-lg bg-accent text-surface-900 font-medium hover:bg-accent-light transition-colors text-sm"
+              href="/contact"
+              className="px-4 py-2 rounded-lg bg-secondary text-surface-900 font-medium hover:bg-secondary-light transition-colors text-sm"
             >
               Hire Me
             </Link>
@@ -68,9 +68,9 @@ export default function Nav() {
             ))}
             <li>
               <Link
-                href="#contact"
+                href="/contact"
                 onClick={() => setOpen(false)}
-                className="block w-full text-center py-3 rounded-lg bg-accent text-surface-900 font-medium"
+                className="block w-full text-center py-3 rounded-lg bg-secondary text-surface-900 font-medium"
               >
                 Hire Me
               </Link>
