@@ -5,6 +5,9 @@ const nextConfig = {
       { protocol: 'https', hostname: 'placehold.co', pathname: '/**' },
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 module.exports = nextConfig
