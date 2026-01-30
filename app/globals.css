@@ -7,7 +7,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-surface-900 text-zinc-100 antialiased;
+    @apply bg-bg-page text-surface-900 antialiased;
   }
 }
 

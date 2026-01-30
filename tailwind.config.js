@@ -13,6 +13,7 @@ module.exports = {
           800: '#121214',
           700: '#1a1a1d',
           600: '#242428',
+          500: '#52525b',
         },
         /* Sky Blue - primary backgrounds & accents */
         primary: {
@@ -32,6 +33,8 @@ module.exports = {
           light: '#38bdf8',
           dark: '#0284c7',
         },
+        /* Light blue page background */
+        'bg-page': '#e0f2fe',
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],

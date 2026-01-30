@@ -59,8 +59,8 @@ export default function Projects() {
     <section id="projects" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Selected Projects</h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-surface-900 mb-4">Selected Projects</h2>
+          <p className="text-surface-700 text-lg max-w-2xl mx-auto">
             A selection of recent work—from product builds to design systems.
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function Projects() {
           {projects.map((project, i) => (
             <article
               key={project.title}
-              className="group relative rounded-2xl bg-surface-800/50 border border-surface-600 overflow-hidden hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5"
+              className="group relative rounded-2xl bg-white border border-primary/20 overflow-hidden hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 shadow-sm"
             >
               <div className="aspect-video relative overflow-hidden bg-surface-700">
                 <Image
@@ -98,15 +98,15 @@ export default function Projects() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-semibold text-surface-900 mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-zinc-400 text-sm mb-4">{project.description}</p>
+                <p className="text-surface-600 text-sm mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 rounded-full bg-surface-700 text-zinc-400 text-xs font-medium"
+                      className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium"
                     >
                       {tag}
                     </span>

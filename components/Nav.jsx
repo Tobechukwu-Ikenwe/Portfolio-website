@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Home } from 'lucide-react'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -17,8 +17,8 @@ export default function Nav() {
   return (
     <header className="sticky top-0 left-0 right-0 z-50 border-b border-surface-700/50 bg-surface-900/95 backdrop-blur-xl">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold text-white hover:text-primary transition-colors">
-          Tobechukwu Ikenwe
+        <Link href="/" className="p-1.5 text-surface-800 hover:text-primary transition-colors rounded-lg" aria-label="Home">
+          <Home className="w-6 h-6" />
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">
@@ -26,7 +26,7 @@ export default function Nav() {
             <li key={href}>
               <Link
                 href={href}
-                className="text-zinc-400 hover:text-white transition-colors text-sm font-medium"
+                className="text-surface-700 hover:text-primary transition-colors text-sm font-medium"
               >
                 {label}
               </Link>
@@ -45,7 +45,7 @@ export default function Nav() {
         <button
           type="button"
           onClick={() => setOpen(!open)}
-          className="md:hidden p-2 text-zinc-400 hover:text-white rounded-lg"
+          className="md:hidden p-2 text-surface-700 hover:text-primary rounded-lg"
           aria-label="Toggle menu"
         >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -70,7 +70,7 @@ export default function Nav() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="block w-full text-center py-3 rounded-lg bg-secondary text-surface-900 font-medium"
+                className="block w-full text-center py-3 rounded-lg bg-secondary text-white font-medium"
               >
                 Hire Me
               </Link>

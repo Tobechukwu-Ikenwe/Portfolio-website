@@ -18,63 +18,63 @@ export default function Contact() {
     <section id="contact" className="py-24 px-6">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Get in Touch</h2>
-          <p className="text-zinc-400 text-lg">
+          <h2 className="text-4xl sm:text-5xl font-bold text-surface-900 mb-4">Get in Touch</h2>
+          <p className="text-surface-700 text-lg">
             Have a project in mind or want to collaborate? Drop a message.
           </p>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-2xl bg-surface-800/50 border border-surface-600 p-6 sm:p-8 space-y-6"
+          className="rounded-2xl bg-white border border-primary/20 p-6 sm:p-8 space-y-6 shadow-sm"
         >
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-zinc-300 mb-2">
+            <label htmlFor="name" className="block text-sm font-medium text-surface-700 mb-2">
               Name
             </label>
             <div className="relative">
-              <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
+              <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-surface-500" />
               <input
                 id="name"
                 name="name"
                 type="text"
                 required
                 placeholder="Your name"
-                className="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-700 border border-surface-600 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                className="w-full pl-12 pr-4 py-3 rounded-xl bg-bg-page border border-primary/20 text-surface-900 placeholder:text-surface-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-zinc-300 mb-2">
+            <label htmlFor="email" className="block text-sm font-medium text-surface-700 mb-2">
               Email
             </label>
             <div className="relative">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-surface-500" />
               <input
                 id="email"
                 name="email"
                 type="email"
                 required
                 placeholder="you@example.com"
-                className="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-700 border border-surface-600 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                className="w-full pl-12 pr-4 py-3 rounded-xl bg-bg-page border border-primary/20 text-surface-900 placeholder:text-surface-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-zinc-300 mb-2">
+            <label htmlFor="message" className="block text-sm font-medium text-surface-700 mb-2">
               Message
             </label>
             <div className="relative">
-              <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-zinc-500" />
+              <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-surface-500" />
               <textarea
                 id="message"
                 name="message"
                 required
                 rows={5}
                 placeholder="Tell me about your project..."
-                className="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-700 border border-surface-600 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors resize-none"
+                className="w-full pl-12 pr-4 py-3 rounded-xl bg-bg-page border border-primary/20 text-surface-900 placeholder:text-surface-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors resize-none"
               />
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function Contact() {
             {status === 'sending' && (
               <span className="w-5 h-5 border-2 border-surface-900 border-t-transparent rounded-full animate-spin" />
             )}
-            {status === 'success' && <span className="text-surface-900">Message sent!</span>}
+            {status === 'success' && <span className="text-white">Message sent!</span>}
             {status !== 'sending' && status !== 'success' && (
               <>
                 <Send className="w-5 h-5" />

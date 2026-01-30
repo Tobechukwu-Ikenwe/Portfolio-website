@@ -10,7 +10,7 @@ export default function ProfileImage() {
 
   return (
     <div className="flex justify-center w-full pt-6 pb-4">
-      <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 rounded-full border-[3px] border-secondary bg-surface-700 overflow-hidden ring-2 ring-secondary/30">
+      <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 rounded-full border-[3px] border-secondary bg-white overflow-hidden ring-2 ring-secondary/30 shadow-md">
         {!error && (
           <Image
             src={PROFILE_IMAGE_SRC}
@@ -24,7 +24,7 @@ export default function ProfileImage() {
         )}
         {error && (
           <div
-            className="absolute inset-0 flex items-center justify-center bg-surface-600 text-zinc-500 text-xs text-center p-2"
+            className="absolute inset-0 flex items-center justify-center bg-surface-600 text-white text-xs text-center p-2"
             title="Drop your profile image as public/profile.png"
           >
             <span>Drop profile.png in /public</span>
