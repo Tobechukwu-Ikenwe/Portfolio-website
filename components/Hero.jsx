@@ -1,11 +1,11 @@
 'use client'
 
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Subtle gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
@@ -14,17 +14,12 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-primary/30 text-surface-800 text-sm mb-8 animate-fade-in">
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span>Available for new projects</span>
-        </div>
-
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-surface-900 mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
           <span className="text-surface-700">
             Hi, I&apos;m
           </span>
           <br />
-          <span className="text-primary">Tobechukwu Ikenwe</span>
+          <span className="text-primary">Tobe</span>
         </h1>
 
         <p className="text-lg sm:text-xl text-surface-700 max-w-2xl mx-auto mb-10 animate-slide-up" style={{ animationDelay: '0.2s' }}>
@@ -33,14 +28,14 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
           <Link
-            href="/contact"
+            href="#contact"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-secondary hover:bg-secondary-light text-white font-semibold transition-all duration-200 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/25"
           >
             Hire Me
             <ArrowRight className="w-5 h-5" />
           </Link>
           <Link
-            href="/projects"
+            href="#embedded-projects"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white hover:bg-white/90 text-surface-800 font-medium border border-primary/30 transition-all duration-200 shadow-sm"
           >
             View Work

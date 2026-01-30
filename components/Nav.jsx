@@ -5,23 +5,25 @@ import Link from 'next/link'
 import { Menu, X, Home } from 'lucide-react'
 
 const links = [
-  { href: '/', label: 'Home' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/experience', label: 'Experience' },
-  { href: '/contact', label: 'Contact' },
+  { href: '#hero', label: 'Home' },
+  { href: '#about', label: 'About Me' },
+  { href: '#embedded-projects', label: 'Embedded' },
+  { href: '#personal-projects', label: 'Personal' },
+  { href: '#ml-projects', label: 'ML' },
+  { href: '#experience', label: 'Experience' },
 ]
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 border-b border-surface-700/50 bg-surface-900/95 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/20 bg-bg-page/80 backdrop-blur-md">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="p-1.5 text-surface-800 hover:text-primary transition-colors rounded-lg" aria-label="Home">
+        <Link href="#hero" className="p-1.5 text-surface-800 hover:text-primary transition-colors rounded-lg" aria-label="Home">
           <Home className="w-6 h-6" />
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-6">
           {links.map(({ href, label }) => (
             <li key={href}>
               <Link
@@ -32,14 +34,6 @@ export default function Nav() {
               </Link>
             </li>
           ))}
-          <li>
-            <Link
-              href="/contact"
-              className="px-4 py-2 rounded-lg bg-secondary text-surface-900 font-medium hover:bg-secondary-light transition-colors text-sm"
-            >
-              Hire Me
-            </Link>
-          </li>
         </ul>
 
         <button
@@ -53,28 +47,19 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div className="md:hidden border-t border-surface-700 bg-surface-900/95 backdrop-blur-xl px-6 py-4">
+        <div className="md:hidden border-t border-primary/20 bg-bg-page/95 backdrop-blur-xl px-6 py-4">
           <ul className="flex flex-col gap-4">
             {links.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
                   onClick={() => setOpen(false)}
-                  className="block text-zinc-400 hover:text-white transition-colors font-medium"
+                  className="block text-surface-700 hover:text-primary transition-colors font-medium"
                 >
                   {label}
                 </Link>
               </li>
             ))}
-            <li>
-              <Link
-                href="/contact"
-                onClick={() => setOpen(false)}
-                className="block w-full text-center py-3 rounded-lg bg-secondary text-white font-medium"
-              >
-                Hire Me
-              </Link>
-            </li>
           </ul>
         </div>
       )}

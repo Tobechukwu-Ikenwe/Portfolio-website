@@ -4,31 +4,49 @@ import { MapPin, Calendar } from 'lucide-react'
 
 const timeline = [
   {
-    role: 'Senior Frontend Developer',
-    company: 'Tech Company',
-    location: 'Remote',
-    period: '2022 – Present',
-    description: 'Lead UI architecture and design systems. Shipped multiple product launches and improved core web vitals across the platform.',
+    role: 'IT Support Specialist',
+    company: 'Goldchase Properties LTD',
+    location: 'Abuja, Nigeria',
+    period: 'Aug 2023 – Feb 2024',
+    items: [
+      'Designed digital marketing materials including flyers and online ads for client acquisition.',
+      'Managed and organized transaction data for accurate reporting and decision-making.',
+    ],
   },
   {
-    role: 'Frontend Developer',
-    company: 'Startup Inc',
-    location: 'San Francisco, CA',
-    period: '2020 – 2022',
-    description: 'Built customer-facing dashboards and internal tools. Collaborated with design and product on a major rebrand.',
+    role: 'Handshake AI Contributor | AI Model Evaluation & LLM Improvement',
+    company: 'Remote',
+    location: '',
+    period: 'Dec 2025 – Present',
+    items: [
+      'Applied human judgment to evaluate and improve large language models from frontier AI labs.',
+      'Provided actionable feedback on outputs to refine model behavior, accuracy, and reliability.',
+    ],
   },
   {
-    role: 'Junior Developer',
-    company: 'Agency Co',
-    location: 'New York, NY',
-    period: '2018 – 2020',
-    description: 'Developed marketing sites and landing pages. Gained experience with React, Node, and CI/CD pipelines.',
+    role: 'Undergraduate Embedded Systems & Control Systems Research Intern',
+    company: 'University of Southern Mississippi',
+    location: 'Hattiesburg, MS',
+    period: 'Aug 2025 – Present',
+    items: [
+      'Designed embedded and control systems for real-world engineering applications.',
+    ],
+  },
+  {
+    role: 'Undergraduate Machine Learning Research Intern',
+    company: 'University of Southern Mississippi',
+    location: 'Hattiesburg, MS',
+    period: 'Aug 2025 – Present',
+    items: [
+      'Developing an end-to-end speech-to-text pipeline using Raspberry Pi and OpenAI Whisper.',
+      'Improved accuracy on noisy audio using noise filtering, normalization, and chunking.',
+    ],
   },
 ]
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6 bg-white/50">
+    <section id="experience" className="py-24 px-6 bg-white/50 scroll-mt-20">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-surface-900 mb-4">Experience</h2>
@@ -38,13 +56,11 @@ export default function Experience() {
         </div>
 
         <div className="relative">
-          {/* Vertical line */}
           <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-px bg-primary/30" />
 
           <div className="space-y-12">
-            {timeline.map((item, i) => (
+            {timeline.map((item) => (
               <div key={item.role + item.company} className="relative pl-16 sm:pl-20">
-                {/* Dot */}
                 <div className="absolute left-4 sm:left-6 top-1 w-4 h-4 rounded-full bg-primary border-4 border-white ring-2 ring-primary/30 shadow-sm" />
 
                 <div className="rounded-2xl bg-white border border-primary/20 p-6 sm:p-8 hover:border-primary/40 transition-colors duration-300 shadow-sm">
@@ -53,16 +69,22 @@ export default function Experience() {
                     <span className="text-primary font-medium">{item.company}</span>
                   </div>
                   <div className="flex flex-wrap gap-4 text-surface-600 text-sm mb-4">
-                    <span className="inline-flex items-center gap-1.5">
-                      <MapPin className="w-4 h-4 text-primary/80" />
-                      {item.location}
-                    </span>
+                    {item.location && (
+                      <span className="inline-flex items-center gap-1.5">
+                        <MapPin className="w-4 h-4 text-primary/80" />
+                        {item.location}
+                      </span>
+                    )}
                     <span className="inline-flex items-center gap-1.5">
                       <Calendar className="w-4 h-4 text-primary/80" />
                       {item.period}
                     </span>
                   </div>
-                  <p className="text-surface-600 leading-relaxed">{item.description}</p>
+                  <ul className="text-surface-600 leading-relaxed list-disc list-inside space-y-2">
+                    {item.items.map((bullet, i) => (
+                      <li key={i}>{bullet}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
