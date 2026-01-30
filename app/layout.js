@@ -13,7 +13,10 @@ export const metadata = {
   title: 'Tobechukwu Ikenwe | Portfolio',
   description: 'Portfolio of Tobechukwu Ikenwe — projects, experience, and contact.',
   icons: {
-    icon: '/favicon.png',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
+    ],
   },
 }
 

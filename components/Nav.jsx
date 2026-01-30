@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Menu, X, Home } from 'lucide-react'
 
@@ -15,9 +15,29 @@ const links = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
+  const [visible, setVisible] = useState(true)
+  const lastScrollY = useRef(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      if (currentScrollY > lastScrollY.current && currentScrollY > 60) {
+        setVisible(false)
+      } else {
+        setVisible(true)
+      }
+      lastScrollY.current = currentScrollY
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/20 bg-bg-page/80 backdrop-blur-md">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-white/20 bg-bg-page/80 backdrop-blur-md transition-transform duration-300 ease-out ${
+        visible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="#hero" className="p-1.5 text-surface-800 hover:text-primary transition-colors rounded-lg" aria-label="Home">
           <Home className="w-6 h-6" />
