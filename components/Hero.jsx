@@ -22,11 +22,7 @@ export default function Hero() {
           <span className="text-primary">Tobe</span>
         </h1>
 
-        <p className="text-lg sm:text-xl text-surface-700 max-w-2xl mx-auto mb-10 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-          Developer & designer focused on building fast, accessible, and beautiful web applications that make an impact.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
           <Link
             href="#contact"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-secondary hover:bg-secondary-light text-white font-semibold transition-all duration-200 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/25"

@@ -9,14 +9,14 @@ export default function ProfileImage() {
   const [error, setError] = useState(false)
 
   return (
-    <div className="flex justify-center w-full pt-6 pb-4">
-      <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 rounded-full border-[3px] border-secondary bg-white overflow-hidden ring-2 ring-secondary/30 shadow-md">
+    <div className="flex justify-center w-full pt-20 pb-6">
+      <div className="relative w-36 h-36 sm:w-44 sm:h-44 flex-shrink-0 rounded-full border-[3px] border-secondary bg-white overflow-hidden ring-2 ring-secondary/30 shadow-md">
         {!error && (
           <Image
             src={PROFILE_IMAGE_SRC}
             alt="Tobechukwu Ikenwe"
             fill
-            sizes="(max-width: 640px) 128px, 160px"
+            sizes="(max-width: 640px) 144px, 176px"
             className="object-cover"
             priority
             onError={() => setError(true)}

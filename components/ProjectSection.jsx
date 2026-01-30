@@ -1,12 +1,13 @@
 'use client'
 
 import Image from 'next/image'
-import { ExternalLink } from 'lucide-react'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
-function ProjectCard({ title, description, tags, image, link }) {
+function ProjectCard({ title, description, tags, image, slug }) {
   return (
     <article className="group relative rounded-2xl bg-white border border-primary/20 overflow-hidden hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 shadow-sm">
-      <a href={link} target="_blank" rel="noopener noreferrer" className="block">
+      <Link href={`/projects/${slug}`} className="block">
         <div className="aspect-video relative overflow-hidden bg-surface-700">
           <Image
             src={image}
@@ -21,7 +22,7 @@ function ProjectCard({ title, description, tags, image, link }) {
             <h3 className="text-xl font-semibold text-surface-900 group-hover:text-primary transition-colors">
               {title}
             </h3>
-            <ExternalLink className="w-4 h-4 text-primary flex-shrink-0" />
+            <ArrowRight className="w-4 h-4 text-primary flex-shrink-0" />
           </div>
           <p className="text-surface-600 text-sm mt-2 mb-4">{description}</p>
           <div className="flex flex-wrap gap-2">
@@ -35,7 +36,7 @@ function ProjectCard({ title, description, tags, image, link }) {
             ))}
           </div>
         </div>
-      </a>
+      </Link>
     </article>
   )
 }
@@ -50,7 +51,7 @@ export default function ProjectSection({ id, title, subtitle, projects }) {
         </div>
         <div className={`grid grid-cols-1 gap-8 ${projects.length === 1 ? 'max-w-md mx-auto' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
           {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+            <ProjectCard key={project.slug} {...project} />
           ))}
         </div>
       </div>
