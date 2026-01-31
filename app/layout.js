@@ -11,11 +11,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata = {
   title: 'Tobechukwu Ikenwe | Portfolio',
-  description: 'Portfolio of Tobechukwu Ikenwe — projects, experience, and contact.',
+  description: 'Portfolio of Tobechukwu Ikenwe — projects and experience.',
   icons: {
     icon: [
+      { url: '/favicon.png', type: 'image/png', sizes: 'any' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
     ],
   },
 }

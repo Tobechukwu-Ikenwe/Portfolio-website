@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Linkedin, Github } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Hero() {
@@ -22,20 +22,34 @@ export default function Hero() {
           <span className="text-primary">Tobe</span>
         </h1>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
           <Link
-            href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-secondary hover:bg-secondary-light text-white font-semibold transition-all duration-200 hover:scale-[1.02] hover:shadow-lg hover:shadow-secondary/25"
-          >
-            Hire Me
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-          <Link
-            href="#embedded-projects"
+            href="/personal"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white hover:bg-white/90 text-surface-800 font-medium border border-primary/30 transition-all duration-200 shadow-sm"
           >
             View Work
+            <ArrowRight className="w-5 h-5" />
           </Link>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.linkedin.com/in/tobechukwu-ikenwe/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-xl bg-white/80 hover:bg-white border border-primary/30 text-surface-700 hover:text-primary transition-all duration-200"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a
+              href="https://github.com/Tobechukwu-Ikenwe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-xl bg-white/80 hover:bg-white border border-primary/30 text-surface-700 hover:text-primary transition-all duration-200"
+              aria-label="GitHub"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+          </div>
         </div>
       </div>
 

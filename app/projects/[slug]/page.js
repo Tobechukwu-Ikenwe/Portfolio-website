@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { getProjectBySlug, getAllSlugs } from '@/lib/projects'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ExternalLink } from 'lucide-react'
 
 export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }))
@@ -27,7 +27,7 @@ export default async function ProjectPage({ params }) {
         <main className="min-h-screen pt-24 px-6">
           <div className="max-w-2xl mx-auto text-center">
             <h1 className="text-2xl font-bold text-surface-900 mb-4">Project not found</h1>
-            <Link href="/#embedded-projects" className="text-primary hover:underline">
+            <Link href="/personal" className="text-primary hover:underline">
               Back to projects
             </Link>
           </div>
@@ -37,13 +37,15 @@ export default async function ProjectPage({ params }) {
     )
   }
 
+  const backHref = project.category === 'ml' ? '/ml' : '/personal'
+
   return (
     <>
       <Nav />
       <main className="min-h-screen pt-24 pb-16 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
-            href="/#embedded-projects"
+            href={backHref}
             className="inline-flex items-center gap-2 text-surface-700 hover:text-primary text-sm font-medium mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -63,7 +65,7 @@ export default async function ProjectPage({ params }) {
             <div className="p-8">
               <h1 className="text-3xl font-bold text-surface-900 mb-4">{project.title}</h1>
               <p className="text-surface-600 text-lg leading-relaxed mb-6">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-8">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
@@ -73,6 +75,27 @@ export default async function ProjectPage({ params }) {
                   </span>
                 ))}
               </div>
+              {project.summary && project.summary.length > 0 && (
+                <div className="mb-8">
+                  <h2 className="text-lg font-semibold text-surface-900 mb-3">What it does</h2>
+                  <ul className="space-y-2 text-surface-600 leading-relaxed list-disc list-inside">
+                    {project.summary.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {project.repoUrl && (
+                <a
+                  href={project.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-secondary hover:bg-secondary-light text-white font-medium transition-colors"
+                >
+                  View project code and details
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
             </div>
           </article>
         </div>

@@ -5,12 +5,11 @@ import Link from 'next/link'
 import { Menu, X, Home } from 'lucide-react'
 
 const links = [
-  { href: '#hero', label: 'Home' },
-  { href: '#about', label: 'About Me' },
-  { href: '#embedded-projects', label: 'Embedded' },
-  { href: '#personal-projects', label: 'Personal' },
-  { href: '#ml-projects', label: 'ML' },
-  { href: '#experience', label: 'Experience' },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About Me' },
+  { href: '/personal', label: 'Personal' },
+  { href: '/ml', label: 'ML' },
+  { href: '/experience', label: 'Experience' },
 ]
 
 export default function Nav() {
@@ -39,7 +38,7 @@ export default function Nav() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="#hero" className="p-1.5 text-surface-800 hover:text-primary transition-colors rounded-lg" aria-label="Home">
+        <Link href="/" className="p-1.5 text-surface-800 hover:text-primary transition-colors rounded-lg" aria-label="Home">
           <Home className="w-6 h-6" />
         </Link>
 

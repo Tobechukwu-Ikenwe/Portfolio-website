@@ -1,18 +1,18 @@
 import Nav from '@/components/Nav'
-import Experience from '@/components/Experience'
+import About from '@/components/About'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Experience | Tobechukwu Ikenwe',
-  description: 'Experience and background of Tobechukwu Ikenwe.',
+  title: 'About Me | Tobechukwu Ikenwe',
+  description: 'About Tobechukwu Ikenwe.',
 }
 
-export default function ExperiencePage() {
+export default function AboutPage() {
   return (
     <>
       <Nav />
       <main className="pt-24 min-h-screen">
-        <Experience />
+        <About />
       </main>
       <Footer />
     </>
